@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'BeeHive-swift_Example' do
+  pod 'BeeHive-swift', :path => '../'
+
+  target 'BeeHive-swift_Tests' do
+    inherit! :search_paths
+
+    pod 'Quick', '~> 1.0.0'
+  pod 'Nimble', '~> 5.1.1'
+  end
+end
