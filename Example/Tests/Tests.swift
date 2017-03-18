@@ -2,7 +2,6 @@
 
 import Quick
 import Nimble
-import BeeHive-swift
 
 class TableOfContentsSpec: QuickSpec {
     override func spec() {

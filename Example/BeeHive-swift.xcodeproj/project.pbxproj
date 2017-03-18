@@ -15,6 +15,11 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		6D60CC72ED1DA50B0CD8B8E3 /* Pods_BeeHive_swift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEAC905877D1C12B80C133D /* Pods_BeeHive_swift_Example.framework */; };
 		8CBC54FF6C10D494378D490D /* Pods_BeeHive_swift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9E76385D84184AED4DAA89 /* Pods_BeeHive_swift_Tests.framework */; };
+		E37A4C111E7BEC6A00D83C80 /* BeeHive.plist in Resources */ = {isa = PBXBuildFile; fileRef = E37A4C0F1E7BEC6A00D83C80 /* BeeHive.plist */; };
+		E37A4C121E7BEC6A00D83C80 /* BHService.plist in Resources */ = {isa = PBXBuildFile; fileRef = E37A4C101E7BEC6A00D83C80 /* BHService.plist */; };
+		E37A4C141E7BEC9000D83C80 /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A4C131E7BEC9000D83C80 /* HomeModule.swift */; };
+		E37A4C161E7CDE0A00D83C80 /* UserModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A4C151E7CDE0A00D83C80 /* UserModule.swift */; };
+		E37A4C181E7CDF1300D83C80 /* NetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A4C171E7CDF1300D83C80 /* NetworkModule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +35,7 @@
 /* Begin PBXFileReference section */
 		19EE73F0CFC6488C60F44E94 /* Pods-BeeHive-swift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeHive-swift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeeHive-swift_Tests/Pods-BeeHive-swift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3FC7AF2DE374284D71FBBBDF /* Pods-BeeHive-swift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeHive-swift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeeHive-swift_Example/Pods-BeeHive-swift_Example.release.xcconfig"; sourceTree = "<group>"; };
-		4F476F5939BE8BFCEBF64F9B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		4F476F5939BE8BFCEBF64F9B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* BeeHive-swift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BeeHive-swift_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,10 +46,15 @@
 		607FACE51AFB9204008FA782 /* BeeHive-swift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BeeHive-swift_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		60A96F17AD3F5E96CD1A1941 /* BeeHive-swift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = "BeeHive-swift.podspec"; path = "../BeeHive-swift.podspec"; sourceTree = "<group>"; };
+		60A96F17AD3F5E96CD1A1941 /* BeeHive-swift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = "BeeHive-swift.podspec"; path = "../BeeHive-swift.podspec"; sourceTree = "<group>"; };
 		7AEAC905877D1C12B80C133D /* Pods_BeeHive_swift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeeHive_swift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E9E76385D84184AED4DAA89 /* Pods_BeeHive_swift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeeHive_swift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8743C12703AACB5A2940C25 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C8743C12703AACB5A2940C25 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E37A4C0F1E7BEC6A00D83C80 /* BeeHive.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BeeHive.plist; sourceTree = "<group>"; };
+		E37A4C101E7BEC6A00D83C80 /* BHService.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BHService.plist; sourceTree = "<group>"; };
+		E37A4C131E7BEC9000D83C80 /* HomeModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
+		E37A4C151E7CDE0A00D83C80 /* UserModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModule.swift; sourceTree = "<group>"; };
+		E37A4C171E7CDF1300D83C80 /* NetworkModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModule.swift; sourceTree = "<group>"; };
 		E4CDB66AEFE363F512F5C08F /* Pods-BeeHive-swift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeHive-swift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeeHive-swift_Tests/Pods-BeeHive-swift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		EFDEFAE0B46583C19338ABE2 /* Pods-BeeHive-swift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeHive-swift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeeHive-swift_Example/Pods-BeeHive-swift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +129,9 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				E37A4C131E7BEC9000D83C80 /* HomeModule.swift */,
+				E37A4C151E7CDE0A00D83C80 /* UserModule.swift */,
+				E37A4C171E7CDF1300D83C80 /* NetworkModule.swift */,
 			);
 			name = "Example for BeeHive-swift";
 			path = "BeeHive-swift";
@@ -127,6 +140,8 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E37A4C0F1E7BEC6A00D83C80 /* BeeHive.plist */,
+				E37A4C101E7BEC6A00D83C80 /* BHService.plist */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -249,8 +264,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				E37A4C121E7BEC6A00D83C80 /* BHService.plist in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				E37A4C111E7BEC6A00D83C80 /* BeeHive.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +378,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E37A4C161E7CDE0A00D83C80 /* UserModule.swift in Sources */,
+				E37A4C141E7BEC9000D83C80 /* HomeModule.swift in Sources */,
+				E37A4C181E7CDF1300D83C80 /* NetworkModule.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -443,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -483,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
