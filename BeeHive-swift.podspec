@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/xiwang126/BeeHive-swift'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'xiwang126' => 'ugcode@ugcode.org' }
+  s.author           = { 'UgCode' => 'ugcode@ugcode.org' }
   s.source           = { :git => 'https://github.com/xiwang126/BeeHive-swift.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 

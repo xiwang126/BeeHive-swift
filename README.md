@@ -22,7 +22,7 @@ pod "BeeHive-swift"
 
 ## Author
 
-xiwang126, ugcode@ugcode.org
+UgCode, ugcode@ugcode.org
 
 ## License
 
