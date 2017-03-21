@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BeeHive_swift
 
 class ViewController: UIViewController {
     
@@ -15,6 +16,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        /*
         print("begin")
         
         work(name: "1")
@@ -29,6 +32,23 @@ class ViewController: UIViewController {
         work(name: "10")
         
         print("end")
+        */
+        
+        if let service1 = BeeHive.shared.createService(UserModuleServiceProtocol_Name) as? UserModuleServiceProtocol {
+            print("User ID: \(service1.login())")
+        }
+        
+        if let service2 = BeeHive.shared.createService(UserModuleServiceProtocol_Name) as? UserModuleServiceProtocol {
+            print("User ID: \(service2.login())")
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let homeService = BeeHive.shared.createService(HomeModuleServiceProtocol_Name) as? HomeModuleServiceProtocol {
+            homeService.presentHomeController(to: self)
+        }
     }
     
     func work(name: String) {

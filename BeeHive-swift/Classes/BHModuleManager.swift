@@ -47,6 +47,7 @@ class BHModuleManager {
     public func registerDynamicModule(_ moduleClass: AnyClass) {
         let className = NSStringFromClass(moduleClass)
         guard let moduleClass = moduleClass as? BHModuleProtocol.Type else {
+            assert(false, "\(className) module does not comply with BHModuleProtocol protocol")
             return
         }
         var level = moduleClass.moduleLevel()
@@ -59,8 +60,14 @@ class BHModuleManager {
     }
 
     public func loadLocalModules() {
-        guard let plistPath = Bundle.main.path(forResource: BHContext.shared.moduleConfigName, ofType: "plist") else { return }
-        guard let moduleList = NSDictionary(contentsOfFile: plistPath) else { return }
+        guard let plistPath = Bundle.main.path(forResource: BHContext.shared.moduleConfigName, ofType: "plist") else {
+            assert(false, "config file path error")
+            return
+        }
+        guard let moduleList = NSDictionary(contentsOfFile: plistPath) else {
+            assert(false, "read config error")
+            return
+        }
         guard let modulesArray = moduleList[kModuleArrayKey] as? [[AnyHashable: Any]] else { return }
         modules += modulesArray
     }

@@ -37,13 +37,13 @@ public class BeeHive {
         self.context = BHContext.shared
     }
 
-    public func createService(_ proto: Protocol) -> Any {
-        return BHServiceManager.shared.createService(proto)
+    public func createService(_ proto: ProtocolName) -> AnyObject? {
+        return BHServiceManager.shared.create(service: proto)
     }
 
     //Registration is recommended to use a static way
-    public func registerService(_ proto: Protocol, service serviceClass: AnyClass) {
-        BHServiceManager.shared.registerService(proto, implClass: serviceClass)
+    public func registerService(_ proto: ProtocolName, service serviceClass: AnyClass) {
+        BHServiceManager.shared.register(service: proto, implClass: serviceClass)
     }
 
     private func loadStaticModules() {
@@ -54,7 +54,6 @@ public class BeeHive {
     private func loadStaticServices() {
         BHServiceManager.shared.isEnableException = isEnableException
         BHServiceManager.shared.registerLocalServices()
-        BHServiceManager.shared.registerAnnotationServices()
     }
 }
 

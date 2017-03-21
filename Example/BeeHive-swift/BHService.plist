@@ -4,9 +4,9 @@
 <array>
 	<dict>
 		<key>service</key>
-		<string>UserTrackServiceProtocol</string>
+		<string>UserModuleServiceProtocol</string>
 		<key>impl</key>
-		<string>BHUserTrackViewController</string>
+		<string>BeeHive_swift_Example.UserModuleService</string>
 	</dict>
 </array>
 </plist>

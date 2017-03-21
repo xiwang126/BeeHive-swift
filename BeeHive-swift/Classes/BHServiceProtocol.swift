@@ -8,7 +8,18 @@
 
 import Foundation
 
-protocol BHServiceProtocol {
-    func singleton() -> Bool
-    static func shareInstance() -> Any
+public protocol BHServiceProtocol {
+    static func shareInstance() -> AnyObject?
+    static func singleton() -> Bool
+    init()
+}
+
+public extension BHServiceProtocol {
+    
+    static func shareInstance() -> AnyObject? {
+        return nil
+    }
+    static func singleton() -> Bool {
+        return false
+    }
 }

@@ -14,8 +14,8 @@ public enum BHEnvironmentType {
 public class BHContext {
     public static let shared = BHContext()
     
-    var modulesByName: [AnyHashable: Any] = [:]
-    var servicesByName: [AnyHashable: Any] = [:]
+    var modulesByName: [AnyHashable: AnyObject] = [:]
+    var servicesByName: [AnyHashable: AnyObject] = [:]
     
     //global env
     public var env = BHEnvironmentType.stage
@@ -48,11 +48,11 @@ public class BHContext {
 
     init() {}
 
-    public func addService(withImplInstance implInstance: Any, serviceName: String) {
-        BHContext.shared.servicesByName[serviceName] = implInstance
+    public func addService(withImplInstance implInstance: AnyObject, serviceName: String) {
+        servicesByName[serviceName] = implInstance
     }
 
-    public func getServiceInstance(fromServiceName serviceName: String) -> Any {
-        return BHContext.shared.servicesByName[serviceName]
+    public func getServiceInstance(fromServiceName serviceName: String) -> AnyObject? {
+        return servicesByName[serviceName]
     }
 }
