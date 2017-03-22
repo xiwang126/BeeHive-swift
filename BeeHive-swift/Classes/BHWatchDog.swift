@@ -19,7 +19,7 @@ class PingThread: Thread {
     }
 
     override func main() {
-        var semaphore = DispatchSemaphore(value: 0)
+        let semaphore = DispatchSemaphore(value: 0)
         while !self.isCancelled {
             self.pingTaskIsRunning = true
             DispatchQueue.main.async {

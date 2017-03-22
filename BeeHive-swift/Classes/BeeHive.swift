@@ -60,7 +60,7 @@ public class BeeHive {
 extension DispatchQueue {
     
     private static var _onceTracker = [String]()
-    class func once(token: String, block:@noescape(Void)->Void) {
+    class func once(token: String, block: (Void)->Void) {
         objc_sync_enter(self);
         defer { objc_sync_exit(self) }
         

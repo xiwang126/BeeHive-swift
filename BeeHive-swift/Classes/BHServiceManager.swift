@@ -74,14 +74,13 @@ open class BHServiceManager {
         if implClass.singleton() {
             var implInstance = BHContext.shared.getServiceInstance(fromServiceName: serviceStr)
             if implInstance == nil {
-                implInstance = implClass.shareInstance() ?? (implClass.init() as! AnyObject)
+                implInstance = implClass.shareInstance() ?? (implClass.init() as AnyObject)
             }
             BHContext.shared.addService(withImplInstance: implInstance!, serviceName: serviceStr)
             return implInstance!
         } else {
-            return implClass.shareInstance() ?? (implClass.init() as! AnyObject)
+            return implClass.shareInstance() ?? (implClass.init() as AnyObject)
         }
-        return nil
     }
     
     // MARK: Private
@@ -100,7 +99,7 @@ open class BHServiceManager {
     
     func checkValid(service: ProtocolName) -> Bool {
         for serviceInfo: [AnyHashable: Any] in safeServices {
-        var protocolStr: String? = (serviceInfo[kService] as? String)
+        let protocolStr: String? = (serviceInfo[kService] as? String)
             if (protocolStr == service) {
                 return true
             }

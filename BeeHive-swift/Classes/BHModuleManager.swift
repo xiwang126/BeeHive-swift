@@ -50,7 +50,7 @@ class BHModuleManager {
             assert(false, "\(className) module does not comply with BHModuleProtocol protocol")
             return
         }
-        var level = moduleClass.moduleLevel()
+        let level = moduleClass.moduleLevel()
         
         var moduleInfo: [AnyHashable: Any] = [:]
         moduleInfo[kModuleInfoLevelKey] = level
@@ -113,7 +113,7 @@ class BHModuleManager {
     
     func handleModulesSetupEvent() {
         for instance in moduleInstances {
-            let bk: () -> Void = { [unowned self] in
+            let bk: () -> Void = {
                 instance.modSetUp(BHContext.shared)
             }
             if instance.async() {
