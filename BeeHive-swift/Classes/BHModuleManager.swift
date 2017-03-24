@@ -10,7 +10,6 @@ public enum BHModuleLevel {
 
 public enum BHModuleEventType: Int {
     case setupEvent = 0
-    case initEvent
     case tearDownEvent
     case splashEvent
     case quickActionEvent

@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias ProtocolName = String
+
 public protocol BHServiceProtocol {
     static func shareInstance() -> AnyObject?
     static func singleton() -> Bool

@@ -37,7 +37,7 @@ public class BeeHive {
         self.context = BHContext.shared
     }
 
-    public func createService(_ proto: ProtocolName) -> AnyObject? {
+    public func createService(_ proto: ProtocolName) -> AnyObject {
         return BHServiceManager.shared.create(service: proto)
     }
 

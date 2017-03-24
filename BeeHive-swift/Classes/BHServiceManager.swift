@@ -8,8 +8,6 @@
 
 import Foundation
 
-public typealias ProtocolName = String
-
 let kService: String = "service"
 let kImpl: String = "impl"
 
@@ -64,11 +62,13 @@ open class BHServiceManager {
         lock.unlock()
     }
     
-    open func create(service: ProtocolName) -> AnyObject? {
+    open func create(service: ProtocolName) -> AnyObject {
         if !checkValid(service: service) && isEnableException {
             assert(false, "\(service) protocol has been registed")
         }
-        guard let implClass = serviceImplClass(service) as? BHServiceProtocol.Type else { return nil }
+        guard let implClass = serviceImplClass(service) as? BHServiceProtocol.Type else {
+            assert(false, "service Impl Class is nill or not comply BHServiceProtocol")
+        }
         
         let serviceStr = service
         if implClass.singleton() {

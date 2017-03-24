@@ -49,7 +49,6 @@ open class BHAppDelegate: UIResponder, UIApplicationDelegate {
         BeeHive.shared.context = BHContext.shared
         
         BHModuleManager.shared.triggerEvent(.setupEvent)
-        BHModuleManager.shared.triggerEvent(.initEvent)
 
         DispatchQueue.main.async {
             BHModuleManager.shared.triggerEvent(.splashEvent)
