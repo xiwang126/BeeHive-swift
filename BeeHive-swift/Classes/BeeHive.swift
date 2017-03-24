@@ -37,8 +37,8 @@ public class BeeHive {
         self.context = BHContext.shared
     }
 
-    public func createService(_ proto: ProtocolName) -> AnyObject {
-        return BHServiceManager.shared.create(service: proto)
+    public func createService(_ proto: ProtocolName) throws -> AnyObject {
+        return try BHServiceManager.shared.create(service: proto)
     }
 
     //Registration is recommended to use a static way

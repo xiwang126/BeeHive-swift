@@ -11,6 +11,13 @@ import Foundation
 let kService: String = "service"
 let kImpl: String = "impl"
 
+public enum BHServiceManagerError: Error {
+    case createServiceClassFailed
+    case instantiationFailure
+    case protocolHasBeenRegisted
+
+}
+
 open class BHServiceManager {
     
     // MARK: Public
@@ -62,12 +69,14 @@ open class BHServiceManager {
         lock.unlock()
     }
     
-    open func create(service: ProtocolName) -> AnyObject {
+    open func create(service: ProtocolName) throws -> AnyObject {
         if !checkValid(service: service) && isEnableException {
             assert(false, "\(service) protocol has been registed")
+            throw BHServiceManagerError.protocolHasBeenRegisted
         }
-        guard let implClass = serviceImplClass(service) as? BHServiceProtocol.Type else {
+        guard let implClass = try serviceImplClass(service) as? BHServiceProtocol.Type else {
             assert(false, "service Impl Class is nill or not comply BHServiceProtocol")
+            throw  BHServiceManagerError.instantiationFailure
         }
         
         let serviceStr = service
@@ -85,16 +94,16 @@ open class BHServiceManager {
     
     // MARK: Private
     
-    func serviceImplClass(_ service: ProtocolName) -> AnyClass? {
+    func serviceImplClass(_ service: ProtocolName) throws -> AnyClass {
         for serviceInfo: [AnyHashable: String] in safeServices {
             if let protocolStr = serviceInfo[kService], protocolStr == service {
-                guard let classStr = serviceInfo[kImpl] else {
-                    return nil
+                guard let classStr = serviceInfo[kImpl], let aclass = NSClassFromString(classStr) else {
+                    throw BHServiceManagerError.createServiceClassFailed
                 }
-                return NSClassFromString(classStr)
+                return aclass
             }
         }
-        return nil
+        throw BHServiceManagerError.createServiceClassFailed
     }
     
     func checkValid(service: ProtocolName) -> Bool {

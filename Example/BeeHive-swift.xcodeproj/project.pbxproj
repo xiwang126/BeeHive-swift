@@ -15,14 +15,14 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		6D60CC72ED1DA50B0CD8B8E3 /* Pods_BeeHive_swift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEAC905877D1C12B80C133D /* Pods_BeeHive_swift_Example.framework */; };
 		8CBC54FF6C10D494378D490D /* Pods_BeeHive_swift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9E76385D84184AED4DAA89 /* Pods_BeeHive_swift_Tests.framework */; };
+		CD8126CD18265F1E0DB6D240 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD812FFFDF1E94E1B78343D8 /* HomeViewController.swift */; };
+		CD812A468F089FAC8283434F /* UserModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD812D5EFC5001954DCB599E /* UserModuleService.swift */; };
+		CD812FE960D10433422E71F7 /* HomeModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD81279417C42295324B8069 /* HomeModuleService.swift */; };
 		E37A4C111E7BEC6A00D83C80 /* BeeHive.plist in Resources */ = {isa = PBXBuildFile; fileRef = E37A4C0F1E7BEC6A00D83C80 /* BeeHive.plist */; };
 		E37A4C121E7BEC6A00D83C80 /* BHService.plist in Resources */ = {isa = PBXBuildFile; fileRef = E37A4C101E7BEC6A00D83C80 /* BHService.plist */; };
 		E37A4C141E7BEC9000D83C80 /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A4C131E7BEC9000D83C80 /* HomeModule.swift */; };
 		E37A4C161E7CDE0A00D83C80 /* UserModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A4C151E7CDE0A00D83C80 /* UserModule.swift */; };
 		E37A4C181E7CDF1300D83C80 /* NetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A4C171E7CDF1300D83C80 /* NetworkModule.swift */; };
-		E37A4C1B1E7FD7F900D83C80 /* UserModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A4C1A1E7FD7F900D83C80 /* UserModuleService.swift */; };
-		E37A4C1D1E80E18E00D83C80 /* HomeModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A4C1C1E80E18E00D83C80 /* HomeModuleService.swift */; };
-		E37A4C1F1E80E3DA00D83C80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A4C1E1E80E3DA00D83C80 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,14 +53,14 @@
 		7AEAC905877D1C12B80C133D /* Pods_BeeHive_swift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeeHive_swift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E9E76385D84184AED4DAA89 /* Pods_BeeHive_swift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeeHive_swift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8743C12703AACB5A2940C25 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		CD81279417C42295324B8069 /* HomeModuleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModuleService.swift; sourceTree = "<group>"; };
+		CD812D5EFC5001954DCB599E /* UserModuleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModuleService.swift; sourceTree = "<group>"; };
+		CD812FFFDF1E94E1B78343D8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E37A4C0F1E7BEC6A00D83C80 /* BeeHive.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BeeHive.plist; sourceTree = "<group>"; };
 		E37A4C101E7BEC6A00D83C80 /* BHService.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BHService.plist; sourceTree = "<group>"; };
 		E37A4C131E7BEC9000D83C80 /* HomeModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
 		E37A4C151E7CDE0A00D83C80 /* UserModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModule.swift; sourceTree = "<group>"; };
 		E37A4C171E7CDF1300D83C80 /* NetworkModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModule.swift; sourceTree = "<group>"; };
-		E37A4C1A1E7FD7F900D83C80 /* UserModuleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModuleService.swift; sourceTree = "<group>"; };
-		E37A4C1C1E80E18E00D83C80 /* HomeModuleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModuleService.swift; sourceTree = "<group>"; };
-		E37A4C1E1E80E3DA00D83C80 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E4CDB66AEFE363F512F5C08F /* Pods-BeeHive-swift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeHive-swift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeeHive-swift_Tests/Pods-BeeHive-swift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		EFDEFAE0B46583C19338ABE2 /* Pods-BeeHive-swift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeHive-swift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeeHive-swift_Example/Pods-BeeHive-swift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,9 +136,7 @@
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				E37A4C191E7FD7C100D83C80 /* Module */,
-				E37A4C1A1E7FD7F900D83C80 /* UserModuleService.swift */,
-				E37A4C1C1E80E18E00D83C80 /* HomeModuleService.swift */,
-				E37A4C1E1E80E3DA00D83C80 /* HomeViewController.swift */,
+				CD812EA5ACAC54C01E686F55 /* Service */,
 			);
 			name = "Example for BeeHive-swift";
 			path = "BeeHive-swift";
@@ -179,6 +177,16 @@
 				4F476F5939BE8BFCEBF64F9B /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		CD812EA5ACAC54C01E686F55 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CD81279417C42295324B8069 /* HomeModuleService.swift */,
+				CD812FFFDF1E94E1B78343D8 /* HomeViewController.swift */,
+				CD812D5EFC5001954DCB599E /* UserModuleService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		E37A4C191E7FD7C100D83C80 /* Module */ = {
@@ -396,14 +404,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E37A4C1D1E80E18E00D83C80 /* HomeModuleService.swift in Sources */,
-				E37A4C1B1E7FD7F900D83C80 /* UserModuleService.swift in Sources */,
 				E37A4C161E7CDE0A00D83C80 /* UserModule.swift in Sources */,
-				E37A4C1F1E80E3DA00D83C80 /* HomeViewController.swift in Sources */,
 				E37A4C141E7BEC9000D83C80 /* HomeModule.swift in Sources */,
 				E37A4C181E7CDF1300D83C80 /* NetworkModule.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				CD812FE960D10433422E71F7 /* HomeModuleService.swift in Sources */,
+				CD8126CD18265F1E0DB6D240 /* HomeViewController.swift in Sources */,
+				CD812A468F089FAC8283434F /* UserModuleService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

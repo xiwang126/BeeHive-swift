@@ -33,21 +33,30 @@ class ViewController: UIViewController {
         
         print("end")
         */
-        
-        if let service1 = BeeHive.shared.createService(UserModuleServiceProtocol_Name) as? UserModuleServiceProtocol {
-            print("User ID: \(service1.login())")
+
+        do {
+            if let service1 = try BeeHive.shared.createService(UserModuleServiceProtocol_Name) as? UserModuleServiceProtocol {
+                print("User ID: \(service1.login())")
+            }
+
+            if let service2 = try BeeHive.shared.createService(UserModuleServiceProtocol_Name) as? UserModuleServiceProtocol {
+                print("User ID: \(service2.login())")
+            }
+        } catch {
+            print("fuckUp")
         }
-        
-        if let service2 = BeeHive.shared.createService(UserModuleServiceProtocol_Name) as? UserModuleServiceProtocol {
-            print("User ID: \(service2.login())")
-        }
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if let homeService = BeeHive.shared.createService(HomeModuleServiceProtocol_Name) as? HomeModuleServiceProtocol {
-            homeService.presentHomeController(to: self)
+
+        do {
+            if let homeService = try BeeHive.shared.createService(HomeModuleServiceProtocol_Name) as? HomeModuleServiceProtocol {
+                homeService.presentHomeController(to: self)
+            }
+        } catch {
+            print("fuckUp")
         }
     }
     
