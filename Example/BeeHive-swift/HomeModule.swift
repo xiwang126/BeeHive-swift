@@ -15,7 +15,7 @@ class HomeModule: BHModuleProtocol {
     }
     
     func modSetUp(_ context: BHContext) {
-        BeeHive.shared.registerService(HomeModuleServiceProtocol_Name, service: HomeModuleService.self)
+        BeeHive.shared.registerService(ServiceName.HomeModuleService, service: HomeModuleService.self)
         print("HomeModule modSetUp")
     }
     

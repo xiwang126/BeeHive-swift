@@ -35,11 +35,11 @@ class ViewController: UIViewController {
         */
 
         do {
-            if let service1 = try BeeHive.shared.createService(UserModuleServiceProtocol_Name) as? UserModuleServiceProtocol {
+            if let service1 = try BeeHive.shared.createService(ServiceName.UserModuleService) as? UserModuleServiceProtocol {
                 print("User ID: \(service1.login())")
             }
 
-            if let service2 = try BeeHive.shared.createService(UserModuleServiceProtocol_Name) as? UserModuleServiceProtocol {
+            if let service2 = try BeeHive.shared.createService(ServiceName.UserModuleService) as? UserModuleServiceProtocol {
                 print("User ID: \(service2.login())")
             }
         } catch {
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
 
         do {
-            if let homeService = try BeeHive.shared.createService(HomeModuleServiceProtocol_Name) as? HomeModuleServiceProtocol {
+            if let homeService = try BeeHive.shared.createService(ServiceName.HomeModuleService) as? HomeModuleServiceProtocol {
                 homeService.presentHomeController(to: self)
             }
         } catch {

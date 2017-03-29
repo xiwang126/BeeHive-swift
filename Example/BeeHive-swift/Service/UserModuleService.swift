@@ -9,7 +9,9 @@
 import Foundation
 import BeeHive_swift
 
-let UserModuleServiceProtocol_Name = "UserModuleServiceProtocol"
+extension ServiceName {
+    static let UserModuleService = ServiceName("UserModuleServiceProtocol")
+}
 
 protocol UserModuleServiceProtocol: BHServiceProtocol {
     func login() -> String

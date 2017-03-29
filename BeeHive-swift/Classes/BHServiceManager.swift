@@ -15,7 +15,6 @@ public enum BHServiceManagerError: Error {
     case createServiceClassFailed
     case instantiationFailure
     case protocolHasBeenRegisted
-
 }
 
 open class BHServiceManager {
@@ -24,12 +23,12 @@ open class BHServiceManager {
     open static let shared = BHServiceManager()
     open var isEnableException: Bool = false
     
-    var allServices: [[AnyHashable: String]] = []
-    var safeServices: [[AnyHashable: String]] {
+    var allServices: [ServiceName: String] = [:]
+    var safeServices: [ServiceName: String] {
         lock.lock()
-        let array = allServices
+        let dic = allServices
         lock.unlock()
-        return array
+        return dic
     }
     lazy var lock = NSRecursiveLock()
     
@@ -43,14 +42,18 @@ open class BHServiceManager {
             assert(false, "read config error")
             return
         }
+
         lock.lock()
-        allServices += serviceList
+        for item in serviceList {
+            let serviceName = ServiceName(item[kService]!)
+            allServices[serviceName] = item[kImpl]
+        }
         lock.unlock()
     }
     
 //    open func registerAnnotationServices() {}
     
-    open func register(service: ProtocolName, implClass: AnyClass) {
+    open func register(service: ServiceName, implClass: AnyClass) {
         if !(implClass is BHServiceProtocol.Type) {
             assert(false, "\(NSStringFromClass(implClass)) module does not comply with BHServiceProtocol protocol")
         }
@@ -58,18 +61,15 @@ open class BHServiceManager {
 //            assert(false, "\(NSStringFromClass(implClass)) module does not comply with \(NSStringFromProtocol(service)) protocol")
 //        }
         if checkValid(service: service) && isEnableException {
-            assert(false, "\(service) protocol has been registed")
+            assert(false, "\(service.rawValue) protocol has been registed")
         }
-        var serviceInfo: [AnyHashable: String] = [:]
-        serviceInfo[kService] = service
-        serviceInfo[kImpl] = NSStringFromClass(implClass)
         
         lock.lock()
-        allServices.append(serviceInfo)
+        allServices[service] = NSStringFromClass(implClass)
         lock.unlock()
     }
     
-    open func create(service: ProtocolName) throws -> AnyObject {
+    open func create(service: ServiceName) throws -> AnyObject {
         if !checkValid(service: service) && isEnableException {
             assert(false, "\(service) protocol has been registed")
             throw BHServiceManagerError.protocolHasBeenRegisted
@@ -78,38 +78,37 @@ open class BHServiceManager {
             assert(false, "service Impl Class is nill or not comply BHServiceProtocol")
             throw  BHServiceManagerError.instantiationFailure
         }
-        
-        let serviceStr = service
+
+        let instanceCreater = { implClass.shareInstance() ?? (implClass.init() as AnyObject) }
         if implClass.singleton() {
-            var implInstance = BHContext.shared.getServiceInstance(fromServiceName: serviceStr)
+            var implInstance = BHContext.shared.getServiceInstance(fromServiceName: service.rawValue)
             if implInstance == nil {
-                implInstance = implClass.shareInstance() ?? (implClass.init() as AnyObject)
+                implInstance = instanceCreater()
             }
-            BHContext.shared.addService(withImplInstance: implInstance!, serviceName: serviceStr)
+            BHContext.shared.addService(withImplInstance: implInstance!, serviceName: service.rawValue)
             return implInstance!
         } else {
-            return implClass.shareInstance() ?? (implClass.init() as AnyObject)
+            return instanceCreater()
         }
     }
     
     // MARK: Private
     
-    func serviceImplClass(_ service: ProtocolName) throws -> AnyClass {
-        for serviceInfo: [AnyHashable: String] in safeServices {
-            if let protocolStr = serviceInfo[kService], protocolStr == service {
-                guard let classStr = serviceInfo[kImpl], let aclass = NSClassFromString(classStr) else {
+    func serviceImplClass(_ service: ServiceName) throws -> AnyClass {
+        for (key, value) in safeServices {
+            if key == service {
+                guard let implClass = NSClassFromString(value) else {
                     throw BHServiceManagerError.createServiceClassFailed
                 }
-                return aclass
+                return implClass
             }
         }
         throw BHServiceManagerError.createServiceClassFailed
     }
     
-    func checkValid(service: ProtocolName) -> Bool {
-        for serviceInfo: [AnyHashable: Any] in safeServices {
-        let protocolStr: String? = (serviceInfo[kService] as? String)
-            if (protocolStr == service) {
+    func checkValid(service: ServiceName) -> Bool {
+        for (key, _) in safeServices {
+            if key == service {
                 return true
             }
         }

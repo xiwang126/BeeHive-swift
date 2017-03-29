@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BeeHive-swift'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'BeeHive swift implementation.'
 
 # This description is used to generate tags and improve search results.
@@ -26,11 +26,13 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'UgCode' => 'ugcode@ugcode.org' }
   s.source           = { :git => 'https://github.com/xiwang126/BeeHive-swift.git', :tag => s.version.to_s }
+  # s.source           = { :path => './' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'BeeHive-swift/Classes/**/*'
+  s.resource = 'BeeHive-swift/*.bundle'
   
   # s.resource_bundles = {
   #   'BeeHive-swift' => ['BeeHive-swift/Assets/*.png']

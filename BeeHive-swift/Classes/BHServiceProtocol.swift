@@ -8,7 +8,32 @@
 
 import Foundation
 
-public typealias ProtocolName = String
+public struct ServiceName: RawRepresentable, Equatable, Hashable {
+
+    public private(set) var rawValue: String
+
+    public var hashValue: Int {
+        return rawValue.hashValue
+    }
+
+    public init(_ rawValue: String) {
+        self.rawValue = rawValue
+    }
+
+    public init(rawValue: String) {
+        self.rawValue = rawValue
+    }
+
+    public static func ==(lhs: ServiceName, rhs: ServiceName) -> Bool {
+        return lhs.rawValue == rhs.rawValue
+    }
+}
+
+/*
+extension ServiceName {
+    public static let UserServer = ServiceName("UserService")
+}
+*/
 
 public protocol BHServiceProtocol {
     static func shareInstance() -> AnyObject?

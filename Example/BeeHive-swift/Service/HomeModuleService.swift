@@ -9,7 +9,10 @@
 import Foundation
 import BeeHive_swift
 
-let HomeModuleServiceProtocol_Name = "HomeModuleServiceProtocol"
+extension ServiceName {
+    static let HomeModuleService = ServiceName("HomeModuleServiceProtocol")
+}
+
 protocol HomeModuleServiceProtocol: BHServiceProtocol {
     func presentHomeController(to presentedController: UIViewController)
 }
